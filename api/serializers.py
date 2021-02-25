@@ -1,5 +1,7 @@
 from rest_framework import serializers
-class studentSerializers(serializers.Serializer):
-    name=serializers.CharField(max_length=100)
-    roll=serializers.IntegerField()
-    city=serializers.CharField(max_length=100)
+from .models import student
+
+class confrenceserializer(serializers.ModelSerializer):
+    class Meta:
+        model=student
+        fields=('name','roll','city')
